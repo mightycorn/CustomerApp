@@ -27,11 +27,14 @@ namespace CustomerApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+
             Customer customer = db.Customers.Find(id);
+
             if (customer == null)
             {
                 return HttpNotFound();
             }
+
             return View(customer);
         }
 
@@ -63,11 +66,14 @@ namespace CustomerApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+
             Customer customer = db.Customers.Find(id);
+
             if (customer == null)
             {
                 return HttpNotFound();
             }
+
             return View(customer);
         }
 
@@ -82,6 +88,7 @@ namespace CustomerApp.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+
             return View(customer);
         }
 
@@ -92,11 +99,14 @@ namespace CustomerApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+
             Customer customer = db.Customers.Find(id);
+
             if (customer == null)
             {
                 return HttpNotFound();
             }
+
             return View(customer);
         }
 
@@ -117,6 +127,7 @@ namespace CustomerApp.Controllers
             {
                 db.Dispose();
             }
+
             base.Dispose(disposing);
         }
     }
